@@ -1,4 +1,5 @@
 <% include ./header.ejs %>
+<% include ./style.ejs %>
 <div class="wrap">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -18,8 +19,8 @@
         <blockquote class="blockquote mb-0">
           <p><%=content.contents%></p>
       
-          <button type="button" class="btn btn-info">수정</button>
-          <button type="button" class="btn btn-danger">삭제</button>
+          <a type="button" class="btn btn-info">수정</a>
+          <a type="button" class="btn btn-danger" href="/board/delete/<%=content.pk%>" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
         </blockquote>
         
       </div>

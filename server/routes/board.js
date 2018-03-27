@@ -21,4 +21,9 @@ router.post('/write', function (req, res) {
   });
 });
 
+router.get('/delete/:id', function (req, res) {
+  NoticeModel.remove({ pk: req.params.id }, function (err) {
+    res.redirect('/');
+  });
+});
 module.exports = router;
