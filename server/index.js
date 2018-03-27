@@ -4,8 +4,6 @@ require('dotenv').config();
 var express = require('express');
 var path = require('path');
 
-// Database Model
-var NoticeModel = require('./models/NoticeModel');
 
 // Database Connection
 var mongoose = require('mongoose');
@@ -14,8 +12,8 @@ mongoose.Promise = global.Promise
 var autoIncrement = require('mongoose-auto-increment');
 
 var db = mongoose.connection
-  .on('error', console.error)
-  .once('open', function(){
+db.on('error', console.error)
+db.once('open', function(){
     console.log('mongodb connected');
   });
 

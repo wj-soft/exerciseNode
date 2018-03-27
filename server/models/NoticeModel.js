@@ -12,5 +12,6 @@ var NoticeSchema = new Schema({
   }
 });
 
-// NoticeSchema.plugin(autoIncrement.plugin, { model: 'notices', field: 'pk', startAt: 1 });
+NoticeSchema.plugin(autoIncrement.plugin, { model: 'notices', field: 'pk', startAt: 1 });
 module.exports = mongoose.model('notices', NoticeSchema);
+
