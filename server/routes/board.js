@@ -7,16 +7,14 @@ router.get('/', function (req, res) {
   res.send('board routing');
 });
 
-router.get('/test', function (req, res) {
-  res.render('board/test',
-    { message: "hello" } 
-  );
+router.get('/write', function (req, res) {
+  res.render('addContent');
 });
 
-router.post('/test', function (req, res) {
+router.post('/write', function (req, res) {
   var notice = new NoticeModel({
-    name: "test",
-    content: "content test",
+    title: req.body.title,
+    contents: req.body.content,
   });
   notice.save(function (err) {
     res.redirect('/');
